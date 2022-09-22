@@ -7,6 +7,8 @@ export const THEME = {
     
     BG_DARK: "#242424",
     BG_DARK_200: "#181818",   
+
+    INPUT: "#F5F4F6",
     
     TXT_LIGHT: "#FFFFF0",
     TXT_LIGHT_200: "#C3C3C3"
@@ -15,7 +17,8 @@ export const THEME = {
   FONT_SIZE: {
     SM: 14,
     MD: 18,
-    LG: 24
+    LG: 24,
+    XLG: 32
   },
 
   FONT_FAMILY: {

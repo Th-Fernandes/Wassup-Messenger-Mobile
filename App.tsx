@@ -1,5 +1,4 @@
 import { StatusBar } from 'react-native';
-import { Text } from 'react-native';
 import {
   useFonts,
   Roboto_400Regular,
@@ -7,6 +6,7 @@ import {
 } from "@expo-google-fonts/roboto"
 import { THEME } from 'theme';
 import { DefaultScreen } from 'components/DefaultScreen';
+import { Home } from 'screens/Home';
 
 export default function App() {
   const [isFontsLoaded] = useFonts({
@@ -21,7 +21,7 @@ export default function App() {
         barStyle='light-content'
         backgroundColor={THEME.COLORS.BG_DARK}
       />
-      {isFontsLoaded && <Text style={{color: THEME.COLORS.TXT_LIGHT,}}>Hello world</Text>}
+      {isFontsLoaded && <Home />}
     </DefaultScreen>
   );
 }
