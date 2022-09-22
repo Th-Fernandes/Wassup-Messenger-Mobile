@@ -4,20 +4,22 @@ export const THEME = {
     BRAND_PRESS: "551FF0",
     ERROR: "#F9627D",
 
-    BG: {
-      DARK: "#242424",
-      DARK_200: "#181818"   
-    },
-
-    TEXT: {
-      LIGHT: "#FFFFF0",
-      LIGHT_200: "#C3C3C3"
-    }
+    
+    BG_DARK: "#242424",
+    BG_DARK_200: "#181818",   
+    
+    TXT_LIGHT: "#FFFFF0",
+    TXT_LIGHT_200: "#C3C3C3"
   },
 
   FONT_SIZE: {
     SM: 14,
     MD: 18,
     LG: 24
+  },
+
+  FONT_FAMILY: {
+    REGULAR: "Roboto_400Regular",
+    MEDIUM: "Roboto_500Medium"
   }
 }
