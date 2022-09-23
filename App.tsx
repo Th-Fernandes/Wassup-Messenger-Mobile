@@ -23,7 +23,7 @@ export default function App() {
         backgroundColor={THEME.COLORS.BG_DARK}
         // translucent
       />
-      {isFontsLoaded && <Chats />}
+      {isFontsLoaded && <Home />}
     </DefaultScreen>
   );
 }
