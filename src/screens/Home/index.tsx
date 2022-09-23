@@ -1,10 +1,21 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import logo from "assets/logo.png"
+import logo from "assets/logo.png";
+
 
 import { styles } from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { supabase } from 'lib/supabase/supabaseClient';
 
 export function Home() {
+  async function handleTest() {
+    const { data, error } = await supabase
+    .from('messages')
+    .select('*')
+
+
+    console.log(data, error)
+  }
+  
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -29,7 +40,7 @@ export function Home() {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.formSubmitButton}>
+        <TouchableOpacity style={styles.formSubmitButton} onPress={handleTest}>
           <Text style={styles.formSubmitButtonText}>ENTRAR</Text>
         </TouchableOpacity>
       </SafeAreaView>

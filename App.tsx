@@ -8,12 +8,12 @@ import { THEME } from 'theme';
 import { DefaultScreen } from 'components/DefaultScreen';
 import { Home } from 'screens/Home';
 
+
 export default function App() {
   const [isFontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_500Medium
   })
-
 
   return (
     <DefaultScreen >
