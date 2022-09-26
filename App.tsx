@@ -7,6 +7,7 @@ import {
 import { THEME } from 'theme';
 import { DefaultScreen } from 'components/DefaultScreen';
 import { Routes } from 'routes';
+import { Loading } from 'components/Loading';
 
 export default function App() {
   const [isFontsLoaded] = useFonts({
@@ -21,7 +22,7 @@ export default function App() {
         backgroundColor={THEME.COLORS.BG_DARK}
       />
 
-      {isFontsLoaded && <Routes />}
+      {isFontsLoaded ? <Routes /> : <Loading />}
     </DefaultScreen>
   );
 }

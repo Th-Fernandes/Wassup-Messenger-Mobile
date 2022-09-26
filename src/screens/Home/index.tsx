@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 import { Header } from './Header';
 import { LoginForm } from './LoginForm';

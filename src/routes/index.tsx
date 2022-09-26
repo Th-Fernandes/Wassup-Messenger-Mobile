@@ -1,8 +1,11 @@
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import React from 'react';
-import { Chats } from 'screens/Chats';
+
 import { Home } from 'screens/Home';
+import { Chat } from 'screens/Chat';
+import { Chats } from 'screens/Chats';
+
 import { THEME } from 'theme';
 
 export function Routes() {
@@ -16,6 +19,7 @@ export function Routes() {
           backgroundColor: THEME.COLORS.BG_DARK
         }
       }}>
+        <Stack.Screen name="chat" component={Chat}/>
         <Stack.Screen name="home" component={Home} />
         <Stack.Screen name="chats" component={Chats} />
       </Stack.Navigator>

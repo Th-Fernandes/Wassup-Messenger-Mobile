@@ -1,0 +1,16 @@
+import React from 'react';
+import { ActivityIndicator, View } from 'react-native';
+import { THEME } from 'theme';
+
+import { styles } from './styles';
+
+export function Loading() {
+  return (
+    <View style={styles.container}>
+      <ActivityIndicator
+        size={90}
+        color={THEME.COLORS.BRAND}
+      />
+    </View>
+  );
+}  
