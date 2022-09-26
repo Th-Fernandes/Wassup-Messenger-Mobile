@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
     fontSize: THEME.FONT_SIZE.SM,
     color: THEME.COLORS.TXT_LIGHT,
     fontFamily: THEME.FONT_FAMILY.REGULAR,
-    marginTop: 16
+    marginTop: 16,
+    textAlign: 'center'
   },
 
   changeSignAction: {

@@ -6,9 +6,7 @@ import {
 } from "@expo-google-fonts/roboto"
 import { THEME } from 'theme';
 import { DefaultScreen } from 'components/DefaultScreen';
-import { Home } from 'screens/Home';
-import { Chats } from 'screens/Chats';
-
+import { Routes } from 'routes';
 
 export default function App() {
   const [isFontsLoaded] = useFonts({
@@ -18,12 +16,12 @@ export default function App() {
 
   return (
     <DefaultScreen >
-      <StatusBar 
+      <StatusBar
         barStyle='light-content'
         backgroundColor={THEME.COLORS.BG_DARK}
-        // translucent
       />
-      {isFontsLoaded && <Home />}
+
+      {isFontsLoaded && <Routes />}
     </DefaultScreen>
   );
 }

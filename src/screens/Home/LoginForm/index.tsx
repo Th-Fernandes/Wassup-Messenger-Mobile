@@ -3,7 +3,11 @@ import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
 
+import { useNavigation } from '@react-navigation/native';
+
 export function LoginForm() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>LOGIN</Text>
@@ -22,7 +26,7 @@ export function LoginForm() {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.submitButton}>
+      <TouchableOpacity  onPress={() => navigation.navigate('chats')} style={styles.submitButton}>
         <Text style={styles.submitButtonText}>ENTRAR</Text>
       </TouchableOpacity>
     </View>
