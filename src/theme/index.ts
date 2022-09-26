@@ -5,6 +5,7 @@ export const THEME = {
     ERROR: "#F9627D",
 
     INPUT: "#F5F4F6",
+    INPUT_DARK: "#303030",
     LIGHT_ICON: "#F5F4F6",
     
     BG_DARK: "#242424",
