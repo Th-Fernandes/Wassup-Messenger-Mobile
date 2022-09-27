@@ -6,7 +6,7 @@ import { styles } from './styles';
 
 export function LoginForm() {
   const navigation = useNavigation();
-
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>LOGIN</Text>
