@@ -1,9 +1,8 @@
 import React from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles';
-
-import { useNavigation } from '@react-navigation/native';
 
 export function LoginForm() {
   const navigation = useNavigation();

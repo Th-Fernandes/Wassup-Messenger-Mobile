@@ -28,5 +28,10 @@ export const THEME = {
   FONT_FAMILY: {
     REGULAR: "Roboto_400Regular",
     MEDIUM: "Roboto_500Medium"
+  },
+
+  CONTAINER: {
+    PADDING_VERTICAL: 32,
+    PADDING_HORIZONTAL: 16,
   }
 }

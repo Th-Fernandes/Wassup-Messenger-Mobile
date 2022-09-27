@@ -19,9 +19,9 @@ export function Routes() {
           backgroundColor: THEME.COLORS.BG_DARK
         }
       }}>
-        <Stack.Screen name="chat" component={Chat}/>
         <Stack.Screen name="home" component={Home} />
         <Stack.Screen name="chats" component={Chats} />
+        <Stack.Screen name="chat" component={Chat} />
       </Stack.Navigator>
     </NavigationContainer>
   );
