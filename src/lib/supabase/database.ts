@@ -17,5 +17,19 @@ export const databaseActions = {
         if (error) errorHandler(error);
         return data;
     }
+  },
+  insert: {
+    from(table:string) {
+      return {
+        async insert(newRow:object | object[]) {
+          const { data, error } = await supabase
+          .from(this.table)
+          .insert(newRow)
+
+          console.log(error)
+        },
+        table
+      }
+    }
   }
 }

@@ -6,6 +6,8 @@ import { PaperPlaneTilt } from 'phosphor-react-native';
 import { THEME } from 'theme';
 import { styles } from './styles';
 import { supabase } from 'lib/supabase/supabaseClient';
+import { authActions } from 'lib/supabase/auth';
+import { databaseActions } from 'lib/supabase/database';
 
 export function MessageInput() {
   const [message, setMessage] = useState<string>('');
@@ -13,19 +15,21 @@ export function MessageInput() {
 
   useEffect(() => {
     async function insertMessageOnDatabase() {
-      async function getSession() {
-        const { data, error } = await supabase.auth.getSession();
+      async function getSessionUserNameAndId() {
+        const { session } = await authActions.getSession();
+        const username = session?.user?.user_metadata?.username;
+        const sessionId = session?.user?.id;
 
-        return data
+        return { username, session_id: sessionId };
       }
 
-      const {session} = await getSession();
-      const username = session?.user?.user_metadata?.username;
-      const sessionId = session?.user?.id
 
-      const { data, error } = await supabase
+      const newRow = {...await getSessionUserNameAndId(), message};
+
+      const { insert } =  databaseActions;
+      insert
         .from('messages')
-        .insert({ username: username || 'Unknown user' , message, session_id: sessionId })
+        .insert(newRow)
     }
 
     if(isMessageSended) {

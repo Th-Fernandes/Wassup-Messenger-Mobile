@@ -14,5 +14,10 @@ export const authActions = {
         return false
       }
       return true
+  },
+  async getSession() {
+    const { data, error } = await supabase.auth.getSession();
+
+    return data
   }
 }
