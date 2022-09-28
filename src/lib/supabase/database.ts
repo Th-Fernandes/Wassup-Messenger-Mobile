@@ -5,6 +5,7 @@ export interface MessagesTable {
   message: string;
   username: string;
   created_at: string;
+  session_id?: string;
 }
 
 export const databaseActions = {

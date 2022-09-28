@@ -6,14 +6,14 @@ import { THEME } from 'theme';
 
 import { styles } from './styles';
 
-export function RecievedMessage({ message, username, created_at }: MessagesTable) {
+export function SendedMessage({message, created_at}:MessagesTable) {
   function handleCreatedAtFormater(created_at: string) {
     const [date, time] = created_at.split('T');
+    console.log(date, time)
     const [hour, minute, second] = time.split(':')
 
     return `${hour}:${minute}`
   }
-
   return (
     <View style={styles.container}>
       <View style={styles.messageContainer}>
@@ -24,7 +24,6 @@ export function RecievedMessage({ message, username, created_at }: MessagesTable
 
       <View style={styles.userParams}>
         <UserCircle size={24} weight="fill" color={THEME.COLORS.INPUT} />
-        <Text style={styles.userParamsUsername}>{username}</Text>
         <Text style={styles.userParamsSendedAt}>{handleCreatedAtFormater(created_at)}</Text>
       </View>
     </View>
