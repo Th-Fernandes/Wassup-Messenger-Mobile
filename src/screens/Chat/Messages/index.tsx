@@ -23,6 +23,7 @@ export function Messages() {
       .channel('public:messages')
       .on('postgres_changes', { event: '*', schema: 'public', table: 'messages' }, (payload:any) => {
         const newMessage = payload?.new;
+        console.log('change successfully listen')
 
         if(newMessage) setMessages(oldMessages => [...oldMessages, newMessage])
       })
@@ -32,17 +33,17 @@ export function Messages() {
   return (
     <ScrollView style={styles.container}>
       {
-        messages 
-          ?
-            messages.map((message:MessagesTable )=> (
-              <RecievedMessage
-                key={message.id}
-                message={message.message}
-                username={message.username}
-                created_at={message.created_at}
-              />
-            ))
-          : <Loading />
+        messages.length === 0 
+          ? <Loading />
+            
+          : messages.map((message:MessagesTable )=> (
+            <RecievedMessage
+              key={message.id}
+              message={message.message}
+              username={message.username}
+              created_at={message.created_at}
+            />
+          ))
       }
     </ScrollView>
   );
