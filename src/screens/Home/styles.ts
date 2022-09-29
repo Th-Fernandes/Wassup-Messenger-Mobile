@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
 
   changeSignAction: {
     color: THEME.COLORS.BRAND,
-    fontFamily: THEME.FONT_FAMILY.MEDIUM
+    fontFamily: THEME.FONT_FAMILY.MEDIUM,
+    marginHorizontal: 2
   }
 });
